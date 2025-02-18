@@ -55,6 +55,7 @@ const obtenerReservaPorId=(req,res)=>{//muestra los productos por la id dada por
 
 
 const eliminarReserva= (req,res)=>{//Problema try catch
+    try{
     const id=req.params.id; 
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
     
@@ -65,6 +66,11 @@ const eliminarReserva= (req,res)=>{//Problema try catch
     };
       reserva.eliminarReserva(id);
       res.send('Reserva Eliminada');
+    
+    }catch(error){
+        console.error(error);
+        res.status(500).send('Se detecto un error');
+    };
     
 };
 
