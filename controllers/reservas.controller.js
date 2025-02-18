@@ -55,16 +55,16 @@ const obtenerReservaPorId=(req,res)=>{//muestra los productos por la id dada por
 
 
 const eliminarReserva= (req,res)=>{//Problema try catch
-    
-    const id=req.params.id;
-    console.log("esto se va a eliminar", id)
+    const id=req.params.id; 
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
-    reserva.eliminarReserva(id);
-;
-    /*if(!reservaEncontrada){
+    
+
+    if(!reservaEncontrada){
         res.status(404).send('Reserva no encontrada');  
         return; 
-    }/*/    res.send('Reserva Eliminada');
+    };
+      reserva.eliminarReserva(id);
+      res.send('Reserva Eliminada');
     
 };
 
@@ -75,17 +75,17 @@ const eliminarReserva= (req,res)=>{//Problema try catch
     const datosACambiar=req.body;
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
     
-
-    if(!reservaEncontrada){
+     if(!reservaEncontrada){
         res.status(404).send('Reserva no encontrada');  
         return; 
-    }
+    };
 
     reserva.actualizarReserva(id, datosACambiar)
+    console.log(reservaEncontrada)
     res.send('Producto Actualizado');
 
 
-}
+};
  
 
 
