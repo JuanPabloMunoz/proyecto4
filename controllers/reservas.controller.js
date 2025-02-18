@@ -54,7 +54,7 @@ const obtenerReservaPorId=(req,res)=>{//muestra los productos por la id dada por
 
 
 
-const eliminarReserva= (req,res)=>{//Problema try catch
+const eliminarReserva= (req,res)=>{
     try{
     const id=req.params.id; 
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
@@ -77,6 +77,7 @@ const eliminarReserva= (req,res)=>{//Problema try catch
 
 
   const actualizarReserva=(req,res)=>{// modifica un producto
+    try{
     const id=req.params.id;
     const datosACambiar=req.body;
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
@@ -89,6 +90,10 @@ const eliminarReserva= (req,res)=>{//Problema try catch
     reserva.actualizarReserva(id, datosACambiar)
     console.log(reservaEncontrada)
     res.send('Producto Actualizado');
+    }catch(error){
+        console.error(error);
+        res.status(500).send('Se detecto un error');   
+    }
 
 
 };
