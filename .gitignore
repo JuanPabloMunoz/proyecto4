@@ -1,4 +1,0 @@
-# Dependencias a ignorar por git:
-node_modules
-.env
-.env.example
