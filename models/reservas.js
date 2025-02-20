@@ -1,5 +1,5 @@
-const { v4: uuidv4 } = require('uuid');
-const fs= require('fs');
+const { v4: uuidv4 } = require('uuid');//importamos la libreria uuid para generar id unicos
+const fs= require('fs');//importamos la libreria fs para poder leer y escribir archivos, tranformar datos en string o arreglos
 const path = require('path');
 const BDReservas=path.join(__dirname, '../data/reservas.json');
 

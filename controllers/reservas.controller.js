@@ -1,12 +1,10 @@
-const fs=require('fs');
-const Reserva= require('../models/reservas.js');
-const rutaBD= './data/reservas.json';
+const Reserva= require('../models/reservas.js');//importamos la clase Reserva y sus propiedades desde el archivo reservas.js
 
 
-const reserva= new Reserva();
+const reserva= new Reserva();//creamos una instancia de la clase Reserva
 
 
-const obtenerReservas=(req,res)=>{//muestra todoslos productos
+const obtenerReservas=(req,res)=>{//muestra todas las reservas
     try{
     const reservas= reserva.obtenerTodasLasReservas();
     res.send(reservas);
@@ -19,7 +17,7 @@ const obtenerReservas=(req,res)=>{//muestra todoslos productos
 
 
 
-const obtenerReservaPorId=(req,res)=>{//muestra los productos por la id dada por el usuario
+const obtenerReservaPorId=(req,res)=>{//muestra las resrvaciones por id
  try{  
     const id= req.params.id;
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
@@ -54,7 +52,7 @@ const obtenerReservaPorId=(req,res)=>{//muestra los productos por la id dada por
 
 
 
-const eliminarReserva= (req,res)=>{
+const eliminarReserva= (req,res)=>{//elimina una reserva por id
     try{
     const id=req.params.id; 
     const reservaEncontrada = reserva.obtenerReservaPorId(id);
@@ -76,7 +74,7 @@ const eliminarReserva= (req,res)=>{
 
 
 
-  const actualizarReserva=(req,res)=>{// modifica un producto
+  const actualizarReserva=(req,res)=>{// modifica una rserva por id
     try{
     const id=req.params.id;
     const datosACambiar=req.body;
