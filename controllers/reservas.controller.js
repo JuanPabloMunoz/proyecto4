@@ -4,9 +4,9 @@ const Reserva= require('../models/reservas.js');//importamos la clase Reserva y 
 const reserva= new Reserva();//creamos una instancia de la clase Reserva
 
 
-const obtenerReservas=(req,res)=>{//muestra todas las reservas
+const obtenerReservas=async(req,res)=>{//muestra todas las reservas
     try{
-    const reservas= reserva.obtenerTodasLasReservas();
+    const reservas= await reserva.obtenerTodasLasReservas();
     res.send(reservas);
     }catch(error){
         console.error(error);
@@ -17,10 +17,10 @@ const obtenerReservas=(req,res)=>{//muestra todas las reservas
 
 
 
-const obtenerReservaPorId=(req,res)=>{//muestra las resrvaciones por id
+const obtenerReservaPorId=async(req,res)=>{//muestra las resrvaciones por id
  try{  
     const id= req.params.id;
-    const reservaEncontrada = reserva.obtenerReservaPorId(id);
+    const reservaEncontrada = await reserva.obtenerReservaPorId(id);
     
    
     if(!reservaEncontrada){
@@ -38,9 +38,9 @@ const obtenerReservaPorId=(req,res)=>{//muestra las resrvaciones por id
 
 
 
- const crearReserva=(req,res)=>{//crea una nueva reserva
+ const crearReserva=async(req,res)=>{//crea una nueva reserva
     try{
-     const reservaNueva= req.body;
+     const reservaNueva= await req.body;
      reserva.crearReserva(reservaNueva);
      res.send('Reserva Creada');
     }
@@ -52,10 +52,10 @@ const obtenerReservaPorId=(req,res)=>{//muestra las resrvaciones por id
 
 
 
-const eliminarReserva= (req,res)=>{//elimina una reserva por id
+const eliminarReserva= async (req,res)=>{//elimina una reserva por id
     try{
     const id=req.params.id; 
-    const reservaEncontrada = reserva.obtenerReservaPorId(id);
+    const reservaEncontrada =await reserva.obtenerReservaPorId(id);
     
 
     if(!reservaEncontrada){
@@ -74,11 +74,11 @@ const eliminarReserva= (req,res)=>{//elimina una reserva por id
 
 
 
-  const actualizarReserva=(req,res)=>{// modifica una rserva por id
+  const actualizarReserva=async(req,res)=>{// modifica una rserva por id
     try{
     const id=req.params.id;
     const datosACambiar=req.body;
-    const reservaEncontrada = reserva.obtenerReservaPorId(id);
+    const reservaEncontrada = await reserva.obtenerReservaPorId(id);
     
      if(!reservaEncontrada){
         res.status(404).send('Reserva no encontrada');  
