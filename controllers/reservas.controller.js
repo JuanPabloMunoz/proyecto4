@@ -37,8 +37,7 @@ const obtenerReservaPorId=async(req,res)=>{//muestra las resrvaciones por id
 
 
 
-
- const crearReserva=async(req,res)=>{//crea una nueva reserva
+const crearReserva=async(req,res)=>{//crea una nueva reserva
     try{
      const reservaNueva= await req.body;
      reserva.crearReserva(reservaNueva);
