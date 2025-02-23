@@ -7,4 +7,12 @@ Imagen Documentacion realizada con Swagger
 
 
 Imagen Consulta Get mediante Postman, para obtener todas las reservas existentes.
+![image alt](https://github.com/JuanPabloMunoz/proyecto4/blob/c0482083a9cd591f92f5a63f42ca518f67dc6617/Documentacion.jpg?raw=true)
+
+
+Imagen Render.com proceso de configuración.
+![image alt](https://github.com/JuanPabloMunoz/proyecto4/blob/c0482083a9cd591f92f5a63f42ca518f67dc6617/Documentacion.jpg?raw=true)
+
+Imagen Render.com, Consulta a la API.
+![image alt](https://github.com/JuanPabloMunoz/proyecto4/blob/c0482083a9cd591f92f5a63f42ca518f67dc6617/Documentacion.jpg?raw=true)
 
